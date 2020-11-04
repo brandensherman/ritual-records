@@ -5,13 +5,17 @@ import loggingMiddleware from 'redux-logger';
 import { productListReducer } from './reducers/productListReducer';
 import { productDetailsReducer } from './reducers/productDetailsReducer';
 import { cartReducer } from './reducers/cartReducer';
-import { userReducer } from './reducers/userReducer';
+import { userAuthReducer } from './reducers/userAuthReducer';
+import { userProfileReducer } from './reducers/userProfileReducer';
+import { userUpdateReducer } from './reducers/userUpdateReducer';
 
 const reducer = combineReducers({
   productList: productListReducer,
   productDetails: productDetailsReducer,
   cart: cartReducer,
-  user: userReducer,
+  user: userAuthReducer,
+  userProfile: userProfileReducer,
+  userUpdate: userUpdateReducer,
 });
 
 const cartItemsFromStorage = localStorage.getItem('cartItems')
