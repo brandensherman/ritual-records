@@ -37,11 +37,7 @@ const productSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    brand: {
-      type: String,
-      required: true,
-    },
-    category: {
+    varietal: {
       type: String,
       required: true,
     },
@@ -50,16 +46,6 @@ const productSchema = mongoose.Schema(
       required: true,
     },
     reviews: [reviewSchema],
-    rating: {
-      type: Number,
-      required: true,
-      default: 0,
-    },
-    numReviews: {
-      type: Number,
-      required: true,
-      default: 0,
-    },
     price: {
       type: Number,
       required: true,
