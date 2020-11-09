@@ -47,6 +47,22 @@ const products = [
     price: 18.0,
     countInStock: 100,
   },
+  {
+    name: 'Columbia',
+    image: '/images/background.jpg',
+    description: 'Black Cherry, Honey, Caramel Apple',
+    varietal: 'Castillo, Caturra',
+    price: 15.0,
+    countInStock: 100,
+  },
+  {
+    name: 'Guatemala',
+    image: '/images/background.jpg',
+    description: 'Cherry Pie, Brown Sugar, Baking Spices',
+    varietal: 'Catuai, Bourbon',
+    price: 19.0,
+    countInStock: 100,
+  },
 ];
 
 module.exports = products;
