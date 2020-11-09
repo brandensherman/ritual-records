@@ -39,7 +39,7 @@ const ProductScreen = ({ history, match }) => {
       {loading ? (
         <Loader />
       ) : error ? (
-        <Message variant='danger' />
+        <Message variant='danger'>{error}</Message>
       ) : (
         <Row>
           <Col md={6}>
@@ -55,6 +55,7 @@ const ProductScreen = ({ history, match }) => {
               <ListGroup.Item>
                 Description: {product.description}
               </ListGroup.Item>
+              <ListGroup.Item>Varietal: {product.varietal}</ListGroup.Item>
             </ListGroup>
           </Col>
           <Col md={3}>

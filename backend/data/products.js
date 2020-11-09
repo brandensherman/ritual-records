@@ -2,7 +2,7 @@ const products = [
   {
     name: 'Ecuador',
     image: '/images/background.jpg',
-    description: 'Nougat, Raisin, Toffee',
+    description: 'Nougat, English Toffee, Golden Raisin',
     varietal: 'Bourbon',
     price: 18.0,
     countInStock: 100,
@@ -10,7 +10,7 @@ const products = [
   {
     name: 'Mexico',
     image: '/images/background.jpg',
-    description: 'Cookie Dough, Walnut, Date',
+    description: 'Cookie Dough, Walnut, Fig Roll',
     varietal: 'Typica Bourbon',
     price: 15.0,
     countInStock: 100,
@@ -18,7 +18,7 @@ const products = [
   {
     name: 'Peru',
     image: '/images/background.jpg',
-    description: 'Chocolate Malt, Cashew Butter, Clementine',
+    description: 'Chocolate Malt, Cashew, Clementine',
     varietal: 'Caturra, Typica',
     price: 15.0,
     countInStock: 100,
@@ -34,7 +34,7 @@ const products = [
   {
     name: 'Costa Rica',
     image: '/images/background.jpg',
-    description: 'Orange, Milk Chocolate, Sweet Cream',
+    description: 'Milk Chocolate, Orange, Cream',
     varietal: 'Amazon',
     price: 17.0,
     countInStock: 100,
@@ -50,7 +50,7 @@ const products = [
   {
     name: 'Columbia',
     image: '/images/background.jpg',
-    description: 'Black Cherry, Honey, Caramel Apple',
+    description: 'Caramel Apple, Honey Cake, Black Tea',
     varietal: 'Castillo, Caturra',
     price: 15.0,
     countInStock: 100,

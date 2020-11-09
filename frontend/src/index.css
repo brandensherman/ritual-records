@@ -1,5 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+.card {
+  /* border: none; */
+}
+
+.product-name {
+  font-size: 1.1rem;
+}
+body {
+  font-family: 'Lato', sans-serif;
+}
+
 main {
   min-height: 80vh;
+}
+
+.logo {
+  height: 4rem;
 }
 
 h1 {

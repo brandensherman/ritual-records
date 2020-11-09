@@ -4,6 +4,8 @@ import { LinkContainer } from 'react-router-bootstrap';
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import { logout } from '../reducers/userAuthReducer';
 
+import logo from '../ritual-logo.png';
+
 const Header = () => {
   const dispatch = useDispatch();
 
@@ -18,9 +20,10 @@ const Header = () => {
       <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>
         <Container>
           <LinkContainer to='/'>
-            <Navbar.Brand>Ritual Coffee</Navbar.Brand>
+            <Navbar.Brand>
+              <img src={logo} className='logo' />
+            </Navbar.Brand>
           </LinkContainer>
-
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ml-auto'>
