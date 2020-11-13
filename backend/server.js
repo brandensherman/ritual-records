@@ -2,6 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
 const products = require('./data/products');
+const path = require('path');
 const { connectDB } = require('./db');
 const { notFound, errorHandler } = require('./middleware/error');
 
@@ -20,8 +21,17 @@ if (process.env.NODE_ENV === 'development') {
 
 app.use('/api', require('./api'));
 
-app.use(notFound);
+if (process.env.NODE_ENV === 'production') {
+  const __dirname = path.resolve();
 
+  app.use(express.static(path.join(__dirname, '/frontend/build')));
+
+  app.get('*', (req, res) =>
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
+  );
+}
+
+app.use(notFound);
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
