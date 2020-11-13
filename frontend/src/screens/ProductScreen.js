@@ -10,7 +10,7 @@ import {
   Button,
   Form,
 } from 'react-bootstrap';
-import Rating from '../components/Rating';
+// import Rating from '../components/Rating';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
 import { fetchProductDetails } from '../reducers/productDetailsReducer';
@@ -18,6 +18,7 @@ import { fetchProductDetails } from '../reducers/productDetailsReducer';
 const ProductScreen = ({ history, match }) => {
   const [qty, setQty] = useState(1);
   const dispatch = useDispatch();
+  let trackList;
 
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
@@ -29,6 +30,12 @@ const ProductScreen = ({ history, match }) => {
   const addToCartHandler = () => {
     history.push(`/cart/${match.params.id}?qty=${qty}`);
   };
+
+  if (product.trackList) {
+    trackList = product.trackList;
+  } else {
+    trackList = [];
+  }
 
   return (
     <>
@@ -47,15 +54,20 @@ const ProductScreen = ({ history, match }) => {
           </Col>
           <Col md={3}>
             <ListGroup variant='flush'>
-              <ListGroup.Item>
-                <h3>{product.name}</h3>
+              <ListGroup.Item className='album-artist'>
+                {product.artist}
               </ListGroup.Item>
-
-              <ListGroup.Item>Price: ${product.price}</ListGroup.Item>
-              <ListGroup.Item>
-                Description: {product.description}
+              <ListGroup.Item classname='album-title'>
+                {product.albumTitle}
               </ListGroup.Item>
-              <ListGroup.Item>Varietal: {product.varietal}</ListGroup.Item>
+              <ListGroup.Item as='div'>
+                <h5 className='track-listing-title'>Track Listing</h5>
+                {trackList.map((track, i) => (
+                  <p className='album-track'>
+                    {i + 1}. {track}
+                  </p>
+                ))}
+              </ListGroup.Item>
             </ListGroup>
           </Col>
           <Col md={3}>

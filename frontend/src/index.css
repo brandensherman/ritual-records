@@ -16,16 +16,25 @@ body {
   border-radius: 5px;
 }
 
-.product-name {
-  font-size: 1.1rem;
+.album-artist {
+  font-size: 1.2rem;
+}
+
+.album-title {
+  font-size: 1rem;
+}
+
+.track-listing-title {
+  font-size: 0.8rem;
+}
+
+.album-track {
+  font-size: 0.8rem;
+  margin: 0rem;
 }
 
 main {
   min-height: 80vh;
-}
-
-.logo {
-  height: 4rem;
 }
 
 h1 {
