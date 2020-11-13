@@ -29,23 +29,29 @@ const productSchema = mongoose.Schema(
       required: true,
       ref: 'User',
     },
-    name: {
-      type: String,
-      required: true,
-    },
     image: {
       type: String,
       required: true,
     },
-    varietal: {
+    artist: {
       type: String,
       required: true,
     },
-    description: {
+    albumTitle: {
       type: String,
       required: true,
     },
     reviews: [reviewSchema],
+    rating: {
+      type: Number,
+      required: true,
+      default: 0,
+    },
+    numReviews: {
+      type: Number,
+      required: true,
+      default: 0,
+    },
     price: {
       type: Number,
       required: true,

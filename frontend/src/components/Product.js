@@ -5,7 +5,7 @@ import Rating from '../components/Rating';
 
 const Product = ({ product }) => {
   return (
-    <Card className='my-2 p-2 rounded text-center'>
+    <Card className='my-2 rounded text-center'>
       <Link to={`/product/${product._id}`}>
         <Card.Img src={product.image} variant='top' />
       </Link>
@@ -13,11 +13,17 @@ const Product = ({ product }) => {
       <Card.Body>
         <Link to={`/product/${product._id}`}>
           <Card.Title as='div'>
-            <strong className='product-name'>{product.name}</strong>
+            <strong className='product-name'>{product.artist}</strong>
           </Card.Title>
         </Link>
-        <Card.Text as='div'>{product.description}</Card.Text>
+        <Card.Text as='div'>{product.albumTitle}</Card.Text>
 
+        <Card.Text as='div'>
+          <Rating
+            value={product.rating}
+            text={`${product.numReviews} reviews`}
+          />
+        </Card.Text>
         <Card.Text as='h3'>${product.price}</Card.Text>
       </Card.Body>
     </Card>

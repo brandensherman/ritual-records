@@ -20,7 +20,7 @@ const HomeScreen = () => {
 
   return (
     <>
-      <h1>All Coffee</h1>
+      <h1>Latest Records</h1>
       {loading ? (
         <Loader />
       ) : error ? (

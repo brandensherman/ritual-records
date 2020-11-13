@@ -1,14 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.navbar-logo {
+  font-size: 1.4rem;
+}
 
 .card {
-  /* border: none; */
+  border: none;
+}
+
+.btn {
+  border-radius: 5px;
 }
 
 .product-name {
   font-size: 1.1rem;
-}
-body {
-  font-family: 'Lato', sans-serif;
 }
 
 main {

@@ -4,8 +4,6 @@ import { LinkContainer } from 'react-router-bootstrap';
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import { logout } from '../reducers/userAuthReducer';
 
-import logo from '../ritual-logo.png';
-
 const Header = () => {
   const dispatch = useDispatch();
 
@@ -17,12 +15,16 @@ const Header = () => {
   };
   return (
     <header>
-      <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>
+      <Navbar
+        className='nav-color'
+        bg='dark'
+        variant='dark'
+        expand='lg'
+        collapseOnSelect
+      >
         <Container>
           <LinkContainer to='/'>
-            <Navbar.Brand>
-              <img src={logo} className='logo' />
-            </Navbar.Brand>
+            <Navbar.Brand className='navbar-logo'>Heavy Records</Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
