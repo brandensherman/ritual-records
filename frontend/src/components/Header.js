@@ -24,7 +24,7 @@ const Header = () => {
       >
         <Container>
           <LinkContainer to='/'>
-            <Navbar.Brand className='navbar-logo'>Heavy Records</Navbar.Brand>
+            <Navbar.Brand className='navbar-logo'>Ritual Records</Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>

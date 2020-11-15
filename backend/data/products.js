@@ -19,7 +19,7 @@ const products = [
     rating: 5,
     numReviews: 0,
     price: 29.99,
-    countInStock: 100,
+    countInStock: 10,
   },
   {
     image: '/images/clairvoyant.jpg',
@@ -39,7 +39,7 @@ const products = [
     rating: 5,
     numReviews: 0,
     price: 29.99,
-    countInStock: 100,
+    countInStock: 10,
   },
   {
     image: '/images/the-way-forward.jpg',
@@ -58,7 +58,7 @@ const products = [
     rating: 5,
     numReviews: 0,
     price: 24.99,
-    countInStock: 100,
+    countInStock: 10,
   },
   {
     image: '/images/language.jpg',
@@ -78,7 +78,7 @@ const products = [
     rating: 5,
     numReviews: 0,
     price: 24.99,
-    countInStock: 100,
+    countInStock: 10,
   },
 
   {
@@ -104,7 +104,7 @@ const products = [
     rating: 5,
     numReviews: 0,
     price: 29.99,
-    countInStock: 100,
+    countInStock: 10,
   },
 ];
 
