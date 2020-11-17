@@ -4,9 +4,9 @@ import loggingMiddleware from 'redux-logger';
 import { productListReducer } from './reducers/productListReducer';
 import { productDetailsReducer } from './reducers/productDetailsReducer';
 import { cartReducer } from './reducers/cartReducer';
-import { userAuthReducer } from './reducers/userAuthReducer';
+import { userAuthReducer, userUpdateReducer } from './reducers/userAuthReducer';
 import { userProfileReducer } from './reducers/userProfileReducer';
-import { userUpdateReducer } from './reducers/userAuthReducer';
+import { orderCreateReducer } from './reducers/orderReducer';
 
 const reducer = combineReducers({
   productList: productListReducer,
@@ -15,6 +15,7 @@ const reducer = combineReducers({
   user: userAuthReducer,
   userProfile: userProfileReducer,
   userUpdate: userUpdateReducer,
+  orderCreate: orderCreateReducer,
 });
 
 const cartItemsFromStorage = localStorage.getItem('cartItems')

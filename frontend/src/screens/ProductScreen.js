@@ -57,14 +57,14 @@ const ProductScreen = ({ history, match }) => {
               <ListGroup.Item className='album-artist'>
                 {product.artist}
               </ListGroup.Item>
-              <ListGroup.Item classname='album-title'>
+              <ListGroup.Item className='album-title'>
                 {product.albumTitle}
               </ListGroup.Item>
               <ListGroup.Item as='div'>
                 <h5 className='track-listing-title'>Track Listing</h5>
-                {trackList.map((track, i) => (
-                  <p className='album-track'>
-                    {i + 1}. {track}
+                {trackList.map((track, index) => (
+                  <p className='album-track' key={index}>
+                    {index + 1}. {track}
                   </p>
                 ))}
               </ListGroup.Item>

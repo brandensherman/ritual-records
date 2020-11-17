@@ -9,7 +9,11 @@ const orderSchema = mongoose.Schema(
     },
     orderItems: [
       {
-        name: {
+        artist: {
+          type: String,
+          required: true,
+        },
+        albumTitle: {
           type: String,
           required: true,
         },

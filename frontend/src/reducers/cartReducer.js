@@ -12,7 +12,8 @@ export const addToCart = (id, qty) => async (dispatch, getState) => {
     type: CART_ADD_ITEM,
     payload: {
       product: data._id,
-      name: data.name,
+      arist: data.artist,
+      albumTitle: data.albumTitle,
       image: data.image,
       price: data.price,
       countInStock: data.countInStock,
@@ -45,10 +46,8 @@ export const saveShippingAddress = (data) => (dispatch) => {
 export const savePaymentMethod = (data) => (dispatch) => {
   dispatch({
     type: CART_SAVE_PAYMENT_METHOD,
-    payload: data,
+    payload: data.paymentMethod,
   });
-
-  localStorage.setItem('paymentMethod', JSON.stringify(data));
 };
 
 export const cartReducer = (
