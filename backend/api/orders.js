@@ -3,14 +3,17 @@ const asyncHandler = require('express-async-handler');
 const { Order } = require('../db');
 const { protect } = require('../middleware/authMiddleware');
 
-// @desc Fetch all orders
-// @route GET /api/orders
-// @access Public
+// @desc Get all logged in user orders
+// @route GET /api/orders/myorders
+// @access Private
 router.get(
-  '/',
+  '/myorders',
+  protect,
   asyncHandler(async (req, res) => {
-    const products = await Order.find({});
-    res.json(products);
+    console.log('req.user ----->', req.user);
+    const orders = await Order.find({ user: req.user._id });
+
+    res.json(orders);
   })
 );
 

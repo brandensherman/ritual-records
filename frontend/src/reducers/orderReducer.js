@@ -8,6 +8,10 @@ const ORDER_DETAILS_REQUEST = 'ORDER_DETAILS_REQUEST';
 const ORDER_DETAILS_SUCCESS = 'ORDER_DETAILS_SUCCESS';
 const ORDER_DETAILS_FAIL = 'ORDER_DETAILS_FAIL';
 
+const ORDER_LIST_REQUEST = 'ORDER_LIST_REQUEST';
+const ORDER_LIST_SUCCESS = 'ORDER_LIST_SUCCESS';
+const ORDER_LIST_FAIL = 'ORDER_LIST_FAIL';
+
 const ORDER_PAY_REQUEST = 'ORDER_PAY_REQUEST';
 const ORDER_PAY_SUCCESS = 'ORDER_PAY_SUCCESS';
 const ORDER_PAY_FAIL = 'ORDER_PAY_FAIL';
@@ -73,6 +77,39 @@ export const fetchOrderDetails = (id) => async (dispatch, getState) => {
   } catch (error) {
     dispatch({
       type: ORDER_DETAILS_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
+  }
+};
+
+export const fetchOrderList = () => async (dispatch, getState) => {
+  try {
+    dispatch({
+      type: ORDER_LIST_REQUEST,
+    });
+
+    const {
+      user: { userInfo },
+    } = getState();
+
+    const config = {
+      headers: {
+        Authorization: `Bearer ${userInfo.token}`,
+      },
+    };
+
+    const { data } = await axios.get('/api/orders/myorders', config);
+
+    dispatch({
+      type: ORDER_LIST_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: ORDER_LIST_FAIL,
       payload:
         error.response && error.response.data.message
           ? error.response.data.message
@@ -196,6 +233,30 @@ export const orderPayReducer = (state = {}, action) => {
 
     case ORDER_PAY_RESET:
       return {};
+
+    default:
+      return state;
+  }
+};
+
+export const orderListReducer = (state = { orders: [] }, action) => {
+  switch (action.type) {
+    case ORDER_LIST_REQUEST:
+      return {
+        loading: true,
+      };
+
+    case ORDER_LIST_SUCCESS:
+      return {
+        loading: false,
+        orders: action.payload,
+      };
+
+    case ORDER_LIST_FAIL:
+      return {
+        loading: false,
+        error: action.payload,
+      };
 
     default:
       return state;
