@@ -6,13 +6,13 @@ const { protect } = require('../middleware/authMiddleware');
 // @desc Fetch all orders
 // @route GET /api/orders
 // @access Public
-// router.get(
-//   '/',
-//   asyncHandler(async (req, res) => {
-//     const products = await Order.find({});
-//     res.json(products);
-//   })
-// );
+router.get(
+  '/',
+  asyncHandler(async (req, res) => {
+    const products = await Order.find({});
+    res.json(products);
+  })
+);
 
 // @desc Get order by ID
 // @route GET /api/orders/:id
