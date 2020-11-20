@@ -26,8 +26,6 @@ router.get(
       res.status(404);
       throw new Error('User not found');
     }
-
-    res.send('success');
   })
 );
 

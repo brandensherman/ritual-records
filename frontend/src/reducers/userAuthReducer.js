@@ -1,4 +1,6 @@
 import axios from 'axios';
+import { USER_PROFILE_RESET } from './userProfileReducer';
+import { ORDER_LIST_RESET } from './orderReducer';
 
 const USER_LOGIN_REQUEST = 'USER_LOGIN_REQUEST';
 const USER_LOGIN_SUCCESS = 'USER_LOGIN_SUCCESS';
@@ -85,6 +87,8 @@ export const register = (name, email, password) => async (dispatch) => {
 export const logout = () => async (dispatch) => {
   localStorage.removeItem('userInfo');
   dispatch({ type: USER_LOGOUT });
+  dispatch({ type: USER_PROFILE_RESET });
+  dispatch({ type: ORDER_LIST_RESET });
 };
 
 export const updateUserProfile = (user) => async (dispatch, getState) => {

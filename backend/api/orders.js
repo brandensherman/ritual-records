@@ -10,9 +10,7 @@ router.get(
   '/myorders',
   protect,
   asyncHandler(async (req, res) => {
-    console.log('req.user ----->', req.user);
     const orders = await Order.find({ user: req.user._id });
-
     res.json(orders);
   })
 );

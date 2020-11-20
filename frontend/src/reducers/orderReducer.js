@@ -11,6 +11,7 @@ const ORDER_DETAILS_FAIL = 'ORDER_DETAILS_FAIL';
 const ORDER_LIST_REQUEST = 'ORDER_LIST_REQUEST';
 const ORDER_LIST_SUCCESS = 'ORDER_LIST_SUCCESS';
 const ORDER_LIST_FAIL = 'ORDER_LIST_FAIL';
+export const ORDER_LIST_RESET = 'ORDER_LIST_RESET';
 
 const ORDER_PAY_REQUEST = 'ORDER_PAY_REQUEST';
 const ORDER_PAY_SUCCESS = 'ORDER_PAY_SUCCESS';
@@ -258,6 +259,8 @@ export const orderListReducer = (state = { orders: [] }, action) => {
         error: action.payload,
       };
 
+    case ORDER_LIST_RESET:
+      return { orders: [] };
     default:
       return state;
   }

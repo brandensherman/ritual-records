@@ -3,6 +3,7 @@ import axios from 'axios';
 const USER_PROFILE_REQUEST = 'USER_PROFILE_REQUEST';
 const USER_PROFILE_SUCCESS = 'USER_PROFILE_SUCCESS';
 const USER_PROFILE_FAIL = 'USER_PROFILE_FAIL';
+export const USER_PROFILE_RESET = 'USER_PROFILE_RESET';
 
 export const getUserProfile = (id) => async (dispatch, getState) => {
   try {
@@ -47,6 +48,8 @@ export const userProfileReducer = (state = { user: {} }, action) => {
       return { loading: false, user: action.payload };
     case USER_PROFILE_FAIL:
       return { loading: false, error: action.payload };
+    case USER_PROFILE_RESET:
+      return { user: {} };
     default:
       return state;
   }
